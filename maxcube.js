@@ -69,7 +69,7 @@ function MaxCube(ip, port) {
         // TODO: better not use anonymous function? (http://stackoverflow.com/a/5226333)
         (function(rf_address) {
           setTimeout(function() {
-            var temp = self.devicesStatus[rf_address] ? self.devicesStatus[rf_address].setpoint_user + 0.5 : 1.5;
+            var temp = self.devicesStatus[rf_address] ? (self.devicesStatus[rf_address].setpoint_user * 1)+ 0.5 : 1.5;
             log('Update trigger ' + rf_address);
             setTemperature.call(self, rf_address, 'MANUAL', temp);
           }, offset++ * 15000);
